@@ -1,46 +1,21 @@
-# Getting Started with Create React App
+# SpaceX Launches React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este projeto é a parte front-end que consome uma api integrada em ruby da SpaceX e mostra os resultados em tela, também está com o Google Optimize integrado realizando testes A/B. Este projeto full-stack foi feito em um dia, acredito que poderia ter melhorias porém como estava viajando meu tempo ficou curto.
 
-## Available Scripts
+# Especificações
 
-In the project directory, you can run:
+* Para criação deste projeto utilizei o boiler plate `create-react-app` e a versão do node é a `16.15.0`.
+* Foi utilizado `typescript`.
+* Para estilização foi utilizada a biblioteca `styled-components`.
 
-### `npm start`
+# Iniciando a aplicação
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Para iniciar a aplicação é necessário que você possua o `node` instalado em sua máquina.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+* Para que os testes A/B do Google Optimize funcionassem, eu precisei criar um alias para o meu localhost. Assim como a documentação enviada eu optei por utilizar o endereço `http://localhost.com:3000/`. 
 
-### `npm test`
+* Instale as dependências do projeto, caso você esteja usando o `npm` basta digitar `npm install` no terminal e na raiz do projeto. Se estiver utilizando o `yarn`, basta utilizar o comando `yarn`.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* Após a instalação, basta rodar o comando `npm start` ou `yarn start`.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+* Certifique que o projeto em `Ruby` esteja rodando sem problemas, caso o contrário as APIs não funcionarão e isso poderá quebrar a página.
