@@ -12,6 +12,8 @@ Este projeto é a parte front-end que consome uma api integrada em ruby da Space
 
 Para iniciar a aplicação é necessário que você possua o `node` instalado em sua máquina.
 
+* Para que os testes A/B do Google Optimize funcionassem, eu precisei criar um alias para o meu localhost. Assim como a documentação enviada eu optei por utilizar o endereço `http://localhost.com:3000/`. 
+
 * Instale as dependências do projeto, caso você esteja usando o `npm` basta digitar `npm install` no terminal e na raiz do projeto. Se estiver utilizando o `yarn`, basta utilizar o comando `yarn`.
 
 * Após a instalação, basta rodar o comando `npm start` ou `yarn start`.
