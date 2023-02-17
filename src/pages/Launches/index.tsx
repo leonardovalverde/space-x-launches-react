@@ -16,7 +16,7 @@ import {
 const Launches = (): JSX.Element => {
   const [launchesToShow, setLaunchesToShow] = useState<Launche[] | Launche>([]);
   const { pastLaunches, nextLaunch, latestLaunch, upcomingLaunches } =
-    useLaunches();
+    useLaunches(["past", "next", "latest", "upcoming"]);
 
   const handleLaunchesToShow = (launches: Launche[] | Launche) => {
     setLaunchesToShow(launches);

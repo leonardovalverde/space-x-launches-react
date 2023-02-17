@@ -9,7 +9,9 @@ import { Launche, LaunchesData } from "./types";
 
 const initialState = {} as Launche;
 
-export const useLaunches = (): LaunchesData => {
+export const useLaunches = (
+  type: Array<"past" | "latest" | "next" | "upcoming">
+): LaunchesData => {
   const [pastLaunches, setPastLaunches] = useState<Launche[]>([initialState]);
   const [latestLaunch, setLatestLaunch] = useState<Launche>(initialState);
   const [nextLaunch, setNextLaunch] = useState<Launche>(initialState);
@@ -19,10 +21,11 @@ export const useLaunches = (): LaunchesData => {
 
   useEffect(() => {
     const fetchPastLaunches = async () => {
-      setPastLaunches(await getPastLaunches());
-      setLatestLaunch(await getLatestLaunch());
-      setNextLaunch(await getNextLaunch());
-      setUpcomingLaunches(await getUpcomingLaunches());
+      if (type.includes("past")) setPastLaunches(await getPastLaunches());
+      if (type.includes("latest")) setLatestLaunch(await getLatestLaunch());
+      if (type.includes("next")) setNextLaunch(await getNextLaunch());
+      if (type.includes("upcoming"))
+        setUpcomingLaunches(await getUpcomingLaunches());
     };
     fetchPastLaunches();
   }, []);
