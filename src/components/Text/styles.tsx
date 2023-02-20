@@ -9,6 +9,7 @@ const StyledText = styled.p<{
   ml?: number;
   padding?: number;
   color?: string;
+  textAlign?: "center" | "left" | "right" | "justify";
 }>`
   margin-bottom: ${(props) => props.mb || spacings.x0}px;
   margin-top: ${(props) => props.mt || spacings.x0}px;
@@ -16,6 +17,7 @@ const StyledText = styled.p<{
   margin-left: ${(props) => props.ml || spacings.x0}px;
   padding: ${(props) => props.padding || spacings.x0}px;
   color: ${(props) => props.color || colors.primary};
+  text-align: ${(props) => props.textAlign || "left"};
 `;
 
 export { StyledText };

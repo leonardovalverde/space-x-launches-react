@@ -10,6 +10,7 @@ const Text = ({
   mr,
   padding,
   color,
+  textAlign,
 }: TextProps): JSX.Element => {
   return (
     <StyledText
@@ -20,6 +21,8 @@ const Text = ({
       mr={mr}
       padding={padding}
       color={color}
+      textAlign={textAlign}
+      
     >
       {children}
     </StyledText>

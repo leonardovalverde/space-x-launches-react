@@ -20,12 +20,12 @@ const Panel = ({
     <Container>
       {imageSrc && <PanelImage src={imageSrc} roundedImage={roundedImage} />}
       {title && (
-        <Text as="h2" mb={spacings.x2} mt={spacings.x2} color={titleColor}>
+        <Text as="h2" mb={spacings.x2} mt={spacings.x2} color={titleColor} textAlign="center">
           {title}
         </Text>
       )}
       {description && (
-        <Text as="span" color={descriptionColor}>
+        <Text as="span" color={descriptionColor} textAlign="center">
           {description}
         </Text>
       )}

@@ -7,4 +7,5 @@ export interface TextProps {
   ml?: number;
   padding?: number;
   color?: string;
+  textAlign?: "left" | "center" | "right" | "justify";
 }
