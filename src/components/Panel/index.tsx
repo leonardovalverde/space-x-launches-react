@@ -14,6 +14,7 @@ const Panel = ({
   onClick,
   buttonVariant,
   buttonDescription,
+  buttonTestId,
 }: PanelProps) => {
   return (
     <Container>
@@ -28,7 +29,12 @@ const Panel = ({
           {description}
         </Text>
       )}
-      <Button onClick={onClick} variant={buttonVariant} mt={spacings.x6}>
+      <Button
+        onClick={onClick}
+        variant={buttonVariant}
+        mt={spacings.x6}
+        dataTestId={buttonTestId}
+      >
         {buttonDescription}
       </Button>
     </Container>

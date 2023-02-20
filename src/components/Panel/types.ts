@@ -8,4 +8,5 @@ export interface PanelProps {
   onClick?: () => void;
   buttonVariant: "primary" | "secondary";
   buttonDescription?: string;
+  buttonTestId?: string;
 }

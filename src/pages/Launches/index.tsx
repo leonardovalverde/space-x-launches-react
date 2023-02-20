@@ -43,6 +43,7 @@ const Launches = (): JSX.Element => {
           roundedImage
           buttonVariant="primary"
           buttonDescription="Buscar Informações"
+          buttonTestId="past-launches-button"
           onClick={() => handleLaunchesToShow(pastLaunches)}
         />
         <Panel
@@ -50,6 +51,7 @@ const Launches = (): JSX.Element => {
           description="Perdeu o lançamento? Aqui estão as informações!"
           buttonVariant="primary"
           buttonDescription="Buscar Informações"
+          buttonTestId="latest-launches-button"
           onClick={() => handleLaunchesToShow(latestLaunch)}
         />
         <Panel
@@ -57,6 +59,7 @@ const Launches = (): JSX.Element => {
           description="Fique ligado nas informações mais quentinhas!"
           buttonVariant="primary"
           buttonDescription="Buscar Informações"
+          buttonTestId="next-launches-button"
           onClick={() => handleLaunchesToShow(nextLaunch)}
         />
         <Panel
@@ -67,6 +70,7 @@ const Launches = (): JSX.Element => {
           roundedImage
           buttonVariant="secondary"
           buttonDescription="Buscar Informações"
+          buttonTestId="upcoming-launches-button"
           onClick={() => handleLaunchesToShow(upcomingLaunches)}
         />
       </PanelContainer>

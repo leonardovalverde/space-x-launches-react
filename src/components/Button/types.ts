@@ -7,4 +7,5 @@ export interface ButtonProps {
   mb?: number;
   mr?: number;
   ml?: number;
+  dataTestId?: string;
 }

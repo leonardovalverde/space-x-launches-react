@@ -10,6 +10,7 @@ const Button = ({
   mb,
   ml,
   mr,
+  dataTestId = "button-test",
 }: ButtonProps) => {
   return (
     <StyledButton
@@ -20,6 +21,7 @@ const Button = ({
       ml={ml}
       mr={mr}
       mt={mt}
+      data-testid={dataTestId}
     >
       {children}
     </StyledButton>
