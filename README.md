@@ -20,6 +20,10 @@ Para iniciar a aplicação é necessário que você possua o `node` instalado em
 
 * Certifique que o projeto em `Ruby` esteja rodando sem problemas, caso o contrário as APIs não funcionarão e isso poderá quebrar a página.
 
+# Testes
+
+* Para mockar os dados da API no teste eu fiz uso da biblioteca [msw](https://www.npmjs.com/package/msw). Caso você queira rodar o projeto em ruby em uma porta diferente da `5000`, lembre de editar o arquivo `endpoints.ts` com a url e porta em que o projeto em ruby está rodando, caso o contrário os testes irão falhar. Normalmente em projetos que rodam em produção estas informações ficam em variáveis de ambientes e não são informações que mudam frequentemente, não tendo a necessidade de ficar tão atento a estes detalhes.
+
 # Errata
 
 * Eu consegui gerar um relatório do optimize após o envio do teste -> [Relatório do Optimize de Visualizações de página_20230220_175858.csv](https://github.com/leonardovalverde/space-x-launches-react/files/10787731/Relatorio.do.Optimize.de.Visualizacoes.de.pagina_20230220_175858.csv)
