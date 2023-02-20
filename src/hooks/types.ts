@@ -23,3 +23,7 @@ export interface LaunchesData {
   nextLaunch: Launche;
   upcomingLaunches: Launche[];
 }
+
+export interface GetGoogleOptimizeVariant {
+  variant: number | undefined;
+}
