@@ -1,17 +1,12 @@
 import { useState } from "react";
-import Card from "../../components/Card";
 import Panel from "../../components/Panel";
 import Text from "../../components/Text";
 import { Launche } from "../../hooks/types";
 import { useLaunches } from "../../hooks/useLaunches";
 import { colors } from "../../ui-tokens/colors";
 import { spacings } from "../../ui-tokens/spacings";
-import {
-  Container,
-  HeaderContainer,
-  LaunchesContainer,
-  PanelContainer,
-} from "./styles";
+import LaunchesData from "./components/LaunchesData";
+import { Container, HeaderContainer, PanelContainer } from "./styles";
 
 const Launches = (): JSX.Element => {
   const [launchesToShow, setLaunchesToShow] = useState<Launche[]>([]);
@@ -75,38 +70,7 @@ const Launches = (): JSX.Element => {
           onClick={() => handleLaunchesToShow(upcomingLaunches)}
         />
       </PanelContainer>
-      <LaunchesContainer>
-        {launchesToShow.length > 0 ? (
-          launchesToShow.map((launch) => (
-            <Card
-              data={[
-                {
-                  label: "Nome",
-                  value: launch.name,
-                },
-                {
-                  label: "Data Local",
-                  value: launch.date_local,
-                },
-                {
-                  label: "Número do vôo",
-                  value: launch.flight_number,
-                },
-                {
-                  label: "Falhas",
-                  value: launch.failures?.length
-                    ? launch.failures
-                        .map((failure) => failure.reason)
-                        .join(", ")
-                    : "Não há informações de falhas",
-                },
-              ]}
-            />
-          ))
-        ) : (
-          <Text>Não existem lançamentos para o período selecionado</Text>
-        )}
-      </LaunchesContainer>
+      <LaunchesData launchesToShow={launchesToShow} />
     </Container>
   );
 };

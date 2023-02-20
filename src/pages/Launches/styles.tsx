@@ -24,11 +24,4 @@ const PanelContainer = styled.div`
   width: 100%;
 `;
 
-const LaunchesContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: ${spacings.x8}px;
-`;
-
-export { Container, PanelContainer, LaunchesContainer, HeaderContainer };
+export { Container, PanelContainer, HeaderContainer };
