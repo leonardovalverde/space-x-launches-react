@@ -9,6 +9,7 @@ const LaunchesData = ({ launchesToShow }: LaunchesDataProps): JSX.Element => {
       {launchesToShow.length > 0 ? (
         launchesToShow.map((launch) => (
           <Card
+            key={launch.id}
             data={[
               {
                 label: "Nome",

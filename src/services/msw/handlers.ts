@@ -1,28 +1,31 @@
 import { rest } from "msw";
-import { pastLaunches } from "./__fixtures__/launches";
+import { endpoints } from "../endpoints";
+import {
+  pastLaunchesFixture,
+  latestLaunchFixture,
+  nextLaunchFixture,
+  upcomingLaunchFixture,
+} from "./__fixtures__/launches";
 
 const getPastLaunchesFixtures = () => {
-  return rest.get(`http://localhost:5000/launches/past`, (req, res, ctx) => {
-    return res(ctx.status(200), ctx.json(pastLaunches));
+  return rest.get(`${endpoints.launches}/past`, (req, res, ctx) => {
+    return res(ctx.status(200), ctx.json(pastLaunchesFixture));
   });
 };
 const getLatestLaunchesFixtures = () => {
-  return rest.get(`http://localhost:5000/launches/latest`, (req, res, ctx) => {
-    return res(ctx.status(200), ctx.json({ pastLaunches }));
+  return rest.get(`${endpoints.launches}/latest`, (req, res, ctx) => {
+    return res(ctx.status(200), ctx.json(latestLaunchFixture));
   });
 };
 const getNextLaunchesFixtures = () => {
-  return rest.get(`http://localhost:5000/launches/next`, (req, res, ctx) => {
-    return res(ctx.status(200), ctx.json({ pastLaunches }));
+  return rest.get(`${endpoints.launches}/next`, (req, res, ctx) => {
+    return res(ctx.status(200), ctx.json(nextLaunchFixture));
   });
 };
 const getUpcomingLaunchesFixtures = () => {
-  return rest.get(
-    `http://localhost:5000/launches/upcoming`,
-    (req, res, ctx) => {
-      return res(ctx.status(200), ctx.json({ pastLaunches }));
-    }
-  );
+  return rest.get(`${endpoints.launches}/upcoming`, (req, res, ctx) => {
+    return res(ctx.status(200), ctx.json(upcomingLaunchFixture));
+  });
 };
 
 export const handlers = [
