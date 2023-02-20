@@ -19,3 +19,7 @@ Para iniciar a aplicação é necessário que você possua o `node` instalado em
 * Após a instalação, basta rodar o comando `npm start` ou `yarn start`.
 
 * Certifique que o projeto em `Ruby` esteja rodando sem problemas, caso o contrário as APIs não funcionarão e isso poderá quebrar a página.
+
+# Errata
+
+* Eu consegui gerar um relatório do optimize após o envio do teste -> [Relatório do Optimize de Visualizações de página_20230220_175858.csv](https://github.com/leonardovalverde/space-x-launches-react/files/10787731/Relatorio.do.Optimize.de.Visualizacoes.de.pagina_20230220_175858.csv)
