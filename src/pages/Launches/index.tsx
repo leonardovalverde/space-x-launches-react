@@ -14,15 +14,22 @@ import {
 } from "./styles";
 
 const Launches = (): JSX.Element => {
-  const [launchesToShow, setLaunchesToShow] = useState<Launche[] | Launche>([]);
+  const [launchesToShow, setLaunchesToShow] = useState<Launche[]>([]);
   const { pastLaunches, nextLaunch, latestLaunch, upcomingLaunches } =
     useLaunches(["past", "next", "latest", "upcoming"]);
 
+  // Caso você queira testar uma condição que não haja lançamentos, basta deletar algum valor do array de useLaunches
+
   const handleLaunchesToShow = (launches: Launche[] | Launche) => {
-    setLaunchesToShow(launches);
+    if (!Array.isArray(launches) && Object.keys(launches).length > 0)
+      setLaunchesToShow([launches]);
+    else if (Array.isArray(launches) && Object.keys(launches[0]).length > 0) {
+      setLaunchesToShow(launches);
+    } else {
+      setLaunchesToShow([]);
+    }
   };
 
-  console.log(nextLaunch);
   return (
     <Container>
       <HeaderContainer>
@@ -69,7 +76,7 @@ const Launches = (): JSX.Element => {
         />
       </PanelContainer>
       <LaunchesContainer>
-        {Array.isArray(launchesToShow) ? (
+        {launchesToShow.length > 0 ? (
           launchesToShow.map((launch) => (
             <Card
               data={[
@@ -87,7 +94,7 @@ const Launches = (): JSX.Element => {
                 },
                 {
                   label: "Falhas",
-                  value: launch.failures.length
+                  value: launch.failures?.length
                     ? launch.failures
                         .map((failure) => failure.reason)
                         .join(", ")
@@ -97,28 +104,7 @@ const Launches = (): JSX.Element => {
             />
           ))
         ) : (
-          <Card
-            data={[
-              {
-                label: "Nome",
-                value: launchesToShow.name,
-              },
-              {
-                label: "Data Local",
-                value: launchesToShow.date_local,
-              },
-              {
-                label: "Número do vôo",
-                value: launchesToShow.flight_number,
-              },
-              {
-                label: "Falhas",
-                value: launchesToShow.failures.length
-                  ? launchesToShow.failures.join(", ")
-                  : "Não há informações de falhas",
-              },
-            ]}
-          />
+          <Text>Não existem lançamentos para o período selecionado</Text>
         )}
       </LaunchesContainer>
     </Container>
