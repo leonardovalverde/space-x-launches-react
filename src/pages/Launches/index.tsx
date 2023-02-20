@@ -18,7 +18,7 @@ const Launches = (): JSX.Element => {
   const { pastLaunches, nextLaunch, latestLaunch, upcomingLaunches } =
     useLaunches(["past", "next", "latest", "upcoming"]);
 
-  // Caso você queira testar uma condição que não haja lançamentos, basta deletar algum valor do array de useLaunches
+  // Caso você queira testar visualmente uma condição que não haja lançamentos, basta deletar algum valor do array de useLaunches
 
   const handleLaunchesToShow = (launches: Launche[] | Launche) => {
     if (!Array.isArray(launches) && Object.keys(launches).length > 0)
