@@ -3,7 +3,7 @@ import { endpoints } from "./endpoints";
 
 export const getPastLaunches = async () => {
   const response = await fetchApi(`${endpoints.launches}/past`);
-  return response;
+  return await response;
 };
 
 export const getUpcomingLaunches = async () => {
